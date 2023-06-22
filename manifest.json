@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Google Translator",
+    "version": "1.0",
+    "description": "Translate selected text",
+    "permissions": [
+      "activeTab"
+      
+    ],
+    "background": {
+        "service_worker": "background.js"
+      },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "translator.png",
+        "48": "icon-48.png"
+      }
+    },
+    "icons": {
+      "16":  "translator.png",
+      "48": "icon-48.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://novoresume.com/page/o/auth-required?pageAuthDesired=/editor/resume/9e381110-ca12-11ed-a219-9332fa8e50c4"],
+          "js": ["content.js"]
+        }
+      ]
+  }
+  
